@@ -25,6 +25,8 @@ import {
 import cordovaApp from "../js/cordova-app";
 import routes from "../js/routes";
 
+import { Player } from "video-react";
+
 export default class extends React.Component {
   constructor() {
     super();
@@ -86,7 +88,19 @@ export default class extends React.Component {
       password: ""
     };
   }
+
   render() {
+    screen.orientation.onchange = () => {
+      if (screen.orientation.type === "portrait") {
+        let tabBar = document.getElementById("toolbarMain");
+        tabBar.style.display = "block";
+        this.player.toggleFullscreen();
+      } else if (screen.orientation.type === "landscape") {
+        let tabBar = document.getElementById("toolbarMain");
+        tabBar.style.display = "none";
+        this.player.toggleFullscreen();
+      }
+    };
     return (
       <App params={this.state.f7params}>
         {/* Status bar overlay for fullscreen mode*/}
@@ -97,7 +111,7 @@ export default class extends React.Component {
         {/* Views/Tabs container */}
         <Views tabs className="safe-areas">
           {/* Tabbar for switching views-tabs */}
-          <Toolbar tabbar labels bottom>
+          <Toolbar tabbar labels bottom id="toolbarMain">
             <Link
               tabLink="#view-settings"
               iconIos="f7:person_round_fill"
@@ -123,6 +137,16 @@ export default class extends React.Component {
             />
           </Toolbar>
 
+          <Player
+            fluid={true}
+            autoPlay
+            playsInline
+            src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+            ref={player => {
+              this.player = player;
+            }}
+          />
+
           {/* Settings View */}
           <View id="view-settings" name="settings" tab url="/settings/" />
 
@@ -135,6 +159,7 @@ export default class extends React.Component {
       </App>
     );
   }
+
   alertLoginData() {
     this.$f7.dialog.alert(
       "Username: " +

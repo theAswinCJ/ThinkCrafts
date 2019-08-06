@@ -4,3 +4,19 @@
 }
 
 /* Your app custom styles here */
+
+.ios {
+  --f7-page-bg-color: #ffffff;
+}
+.md {
+  --f7-page-bg-color: #fff;
+}
+.aurora {
+  --f7-page-bg-color: #fff;
+}
+
+@media (min-width: 320px) {
+  #HomeCardGroup {
+    padding-bottom: 65%;
+  }
+}

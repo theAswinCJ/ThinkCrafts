@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Page,
   Navbar,
@@ -11,163 +11,266 @@ import {
   Button,
   Range,
   Block
-} from 'framework7-react';
+} from "framework7-react";
 
-export default () => (
-  <Page name="settings">
-    <Navbar title="Settings" />
+import { Player } from "video-react";
 
-    <BlockTitle>Form Example</BlockTitle>
-    <List noHairlinesMd>
-      <ListInput
-        label="Name"
-        type="text"
-        placeholder="Your name"
-      ></ListInput>
+export default () => {
+  return (
+    <Page name="settings">
+      <div className="list">
+        <ul>
+          <li className="item-content">
+            <div className="item-media">
+              <i className="icon my-icon" />
+            </div>
+            <div className="item-inner">
+              <div className="item-title">List element title</div>
+              <div className="item-after">List element label</div>
+            </div>
+          </li>
 
-      <ListInput
-        label="E-mail"
-        type="email"
-        placeholder="E-mail"
-      ></ListInput>
+          <li className="item-content">
+            <div className="item-media">
+              <i className="icon my-icon" />
+            </div>
+            <div className="item-inner">
+              <div className="item-title">List element title</div>
+              <div className="item-after">List element label</div>
+            </div>
+          </li>
 
-      <ListInput
-        label="URL"
-        type="url"
-        placeholder="URL"
-      ></ListInput>
+          <li className="item-content">
+            <div className="item-media">
+              <i className="icon my-icon" />
+            </div>
+            <div className="item-inner">
+              <div className="item-title">List element title</div>
+              <div className="item-after">List element label</div>
+            </div>
+          </li>
 
-      <ListInput
-        label="Password"
-        type="password"
-        placeholder="Password"
-      ></ListInput>
+          <li className="item-content">
+            <div className="item-media">
+              <i className="icon my-icon" />
+            </div>
+            <div className="item-inner">
+              <div className="item-title">List element title</div>
+              <div className="item-after">List element label</div>
+            </div>
+          </li>
 
-      <ListInput
-        label="Phone"
-        type="tel"
-        placeholder="Phone"
-      ></ListInput>
+          <li className="item-content">
+            <div className="item-media">
+              <i className="icon my-icon" />
+            </div>
+            <div className="item-inner">
+              <div className="item-title">List element title</div>
+              <div className="item-after">List element label</div>
+            </div>
+          </li>
 
-      <ListInput
-        label="Gender"
-        type="select"
-        >
-        <option>Male</option>
-        <option>Female</option>
-      </ListInput>
+          <li className="item-content">
+            <div className="item-media">
+              <i className="icon my-icon" />
+            </div>
+            <div className="item-inner">
+              <div className="item-title">List element title</div>
+              <div className="item-after">List element label</div>
+            </div>
+          </li>
 
-      <ListInput
-        label="Birth date"
-        type="date"
-        placeholder="Birth day"
-        defaultValue="2014-04-30"
-      ></ListInput>
+          <li className="item-content">
+            <div className="item-media">
+              <i className="icon my-icon" />
+            </div>
+            <div className="item-inner">
+              <div className="item-title">List element title</div>
+              <div className="item-after">List element label</div>
+            </div>
+          </li>
 
-      <ListItem
-        title="Toggle"
-      >
-        <Toggle slot="after" />
-      </ListItem>
+          <li className="item-content">
+            <div className="item-media">
+              <i className="icon my-icon" />
+            </div>
+            <div className="item-inner">
+              <div className="item-title">List element title</div>
+              <div className="item-after">List element label</div>
+            </div>
+          </li>
 
-      <ListInput
-        label="Range"
-        input={false}
-      >
-        <Range slot="input" value={50} min={0} max={100} step={1} />
-      </ListInput>
+          <li className="item-content">
+            <div className="item-media">
+              <i className="icon my-icon" />
+            </div>
+            <div className="item-inner">
+              <div className="item-title">List element title</div>
+              <div className="item-after">List element label</div>
+            </div>
+          </li>
 
-      <ListInput
-        type="textarea"
-        label="Textarea"
-        placeholder="Bio"
-      ></ListInput>
-      <ListInput
-        type="textarea"
-        label="Resizable"
-        placeholder="Bio"
-        resizable
-      ></ListInput>
-    </List>
+          <li className="item-content">
+            <div className="item-media">
+              <i className="icon my-icon" />
+            </div>
+            <div className="item-inner">
+              <div className="item-title">List element title</div>
+              <div className="item-after">List element label</div>
+            </div>
+          </li>
 
-    <BlockTitle>Buttons</BlockTitle>
-    <Block strong>
-      <Row tag="p">
-        <Button className="col">Button</Button>
-        <Button className="col" fill>Fill</Button>
-      </Row>
-      <Row tag="p">
-        <Button className="col" raised>Raised</Button>
-        <Button className="col" raised fill>Raised Fill</Button>
-      </Row>
-      <Row tag="p">
-        <Button className="col" round>Round</Button>
-        <Button className="col" round fill>Round Fill</Button>
-      </Row>
-      <Row tag="p">
-        <Button className="col" outline>Outline</Button>
-        <Button className="col" round outline>Outline Round</Button>
-      </Row>
-      <Row tag="p">
-        <Button className="col" small outline>Small</Button>
-        <Button className="col" small round outline>Small Round</Button>
-      </Row>
-      <Row tag="p">
-        <Button className="col" small fill>Small</Button>
-        <Button className="col" small round fill>Small Round</Button>
-      </Row>
-      <Row tag="p">
-        <Button className="col" large raised>Large</Button>
-        <Button className="col" large fill raised>Large Fill</Button>
-      </Row>
-      <Row tag="p">
-        <Button className="col" large fill raised color="red">Large Red</Button>
-        <Button className="col" large fill raised color="green">Large Green</Button>
-      </Row>
-    </Block>
+          <li className="item-content">
+            <div className="item-media">
+              <i className="icon my-icon" />
+            </div>
+            <div className="item-inner">
+              <div className="item-title">List element title</div>
+              <div className="item-after">List element label</div>
+            </div>
+          </li>
 
-    <BlockTitle>Checkbox group</BlockTitle>
-    <List>
-      <ListItem
-        checkbox
-        name="my-checkbox"
-        value="Books"
-        title="Books"
-      ></ListItem>
-      <ListItem
-        checkbox
-        name="my-checkbox"
-        value="Movies"
-        title="Movies"
-      ></ListItem>
-      <ListItem
-        checkbox
-        name="my-checkbox"
-        value="Food"
-        title="Food"
-      ></ListItem>
-    </List>
+          <li className="item-content">
+            <div className="item-media">
+              <i className="icon my-icon" />
+            </div>
+            <div className="item-inner">
+              <div className="item-title">List element title</div>
+              <div className="item-after">List element label</div>
+            </div>
+          </li>
 
-    <BlockTitle>Radio buttons group</BlockTitle>
-    <List>
-      <ListItem
-        radio
-        name="radio"
-        value="Books"
-        title="Books"
-      ></ListItem>
-      <ListItem
-        radio
-        name="radio"
-        value="Movies"
-        title="Movies"
-      ></ListItem>
-      <ListItem
-        radio
-        name="radio"
-        value="Food"
-        title="Food"
-      ></ListItem>
-    </List>
-  </Page>
-);
+          <li className="item-content">
+            <div className="item-media">
+              <i className="icon my-icon" />
+            </div>
+            <div className="item-inner">
+              <div className="item-title">List element title</div>
+              <div className="item-after">List element label</div>
+            </div>
+          </li>
+
+          <li className="item-content">
+            <div className="item-media">
+              <i className="icon my-icon" />
+            </div>
+            <div className="item-inner">
+              <div className="item-title">List element title</div>
+              <div className="item-after">List element label</div>
+            </div>
+          </li>
+
+          <li className="item-content">
+            <div className="item-media">
+              <i className="icon my-icon" />
+            </div>
+            <div className="item-inner">
+              <div className="item-title">List element title</div>
+              <div className="item-after">List element label</div>
+            </div>
+          </li>
+
+          <li className="item-content">
+            <div className="item-media">
+              <i className="icon my-icon" />
+            </div>
+            <div className="item-inner">
+              <div className="item-title">List element title</div>
+              <div className="item-after">List element label</div>
+            </div>
+          </li>
+
+          <li className="item-content">
+            <div className="item-media">
+              <i className="icon my-icon" />
+            </div>
+            <div className="item-inner">
+              <div className="item-title">List element title</div>
+              <div className="item-after">List element label</div>
+            </div>
+          </li>
+
+          <li className="item-content">
+            <div className="item-media">
+              <i className="icon my-icon" />
+            </div>
+            <div className="item-inner">
+              <div className="item-title">List element title</div>
+              <div className="item-after">List element label</div>
+            </div>
+          </li>
+
+          <li className="item-content">
+            <div className="item-media">
+              <i className="icon my-icon" />
+            </div>
+            <div className="item-inner">
+              <div className="item-title">List element title</div>
+              <div className="item-after">List element label</div>
+            </div>
+          </li>
+
+          <li className="item-content">
+            <div className="item-media">
+              <i className="icon my-icon" />
+            </div>
+            <div className="item-inner">
+              <div className="item-title">List element title</div>
+              <div className="item-after">List element label</div>
+            </div>
+          </li>
+
+          <li className="item-content">
+            <div className="item-media">
+              <i className="icon my-icon" />
+            </div>
+            <div className="item-inner">
+              <div className="item-title">List element title</div>
+              <div className="item-after">List element label</div>
+            </div>
+          </li>
+
+          <li className="item-content">
+            <div className="item-media">
+              <i className="icon my-icon" />
+            </div>
+            <div className="item-inner">
+              <div className="item-title">List element title</div>
+              <div className="item-after">List element label</div>
+            </div>
+          </li>
+
+          <li className="item-content">
+            <div className="item-media">
+              <i className="icon my-icon" />
+            </div>
+            <div className="item-inner">
+              <div className="item-title">List element title</div>
+              <div className="item-after">List element label</div>
+            </div>
+          </li>
+
+          <li className="item-content">
+            <div className="item-media">
+              <i className="icon my-icon" />
+            </div>
+            <div className="item-inner">
+              <div className="item-title">List element title</div>
+              <div className="item-after">List element label</div>
+            </div>
+          </li>
+
+          <li className="item-content">
+            <div className="item-media">
+              <i className="icon my-icon" />
+            </div>
+            <div className="item-inner">
+              <div className="item-title">List element title</div>
+              <div className="item-after">List element label</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </Page>
+  );
+};
